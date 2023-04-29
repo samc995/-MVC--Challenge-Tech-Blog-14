@@ -1,6 +1,14 @@
-  {{#if logged_in}}
- <a href="/dashboard">dashboard</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
+{{#each posts as |post| }}
+<div class="row mb-4">
+  <div class="col-md-5">
+    <h2>
+      
+     
+      <a href="/edit/{{post.id}}">{{post.title}}</a>
+    </h2>
+    
+    <p>Created on {{format_date post.date_created}}</p>
+  </div>
+  
+</div>
+{{/each}}
